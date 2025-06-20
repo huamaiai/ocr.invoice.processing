@@ -28,7 +28,9 @@ async def upload_invoice(file: UploadFile = File(...)):
         return JSONResponse(content={"text": extracted_text[:2000]})  # Truncate for demo
 
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error("🚨 Error in /upload-invoice endpoint:")
+        logger.error(traceback.format_exc())  # logs full stack trace
+        raise HTTPException(status_code=500, detail="Internal error. Check logs.")
 
 @app.get("/invoice-log")
 async def get_invoice_log():

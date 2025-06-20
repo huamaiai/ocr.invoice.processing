@@ -2,9 +2,11 @@ import streamlit as st
 import requests
 import os
 
-API_BASE = os.getenv("API_BASE_URL", "http://fastapi:8000")  # fallback for Docker
+from dotenv import load_dotenv
+load_dotenv()
 
-response = requests.post(f"{API_BASE}/upload-invoice", files=files)
+API_BASE = os.getenv("API_BASE_URL")
+
 st.set_page_config(page_title="Invoice HITL Review", layout="wide")
 st.title("📄 Human-in-the-Loop Invoice Review")
 

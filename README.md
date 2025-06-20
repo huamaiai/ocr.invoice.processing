@@ -244,6 +244,8 @@ MONGO_HOST=localhost
 MONGO_PORT=27017
 MONGODB_URI=mongodb://localhost:27017
 MONGODB_DB=ocr_logs
+
+API_BASE_URL=http://localhost:8000
 ```
 
 ---

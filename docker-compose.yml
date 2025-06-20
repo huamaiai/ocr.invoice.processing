@@ -48,6 +48,8 @@ services:
       - "8501:8501"
     depends_on:
       - fastapi
+    env_file:
+      - .env
 
 volumes:
   mysql_data:
