@@ -25,6 +25,9 @@ catalog_index.faiss
 .vscode/
 .idea/
 
+# EXCEPT this one file
+!.vscode/launch.json
+
 # OS files
 .DS_Store
 Thumbs.db
