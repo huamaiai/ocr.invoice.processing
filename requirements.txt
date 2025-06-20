@@ -1,0 +1,25 @@
+fastapi
+uvicorn[standard]
+pymongo
+mysql-connector-python
+sqlalchemy
+pydantic
+
+# OCR and image processing
+pytesseract
+Pillow
+opencv-python
+pdf2image
+PyMuPDF
+
+# ML & embeddings
+sentence-transformers
+faiss-cpu
+
+# Frondend tools
+streamlit
+
+# Utilities
+python-dotenv
+pytest
+python-multipart

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Widget A",
+    "upc": "UPC123456",
+    "description": "High performance widget for general use"
+  },
+  {
+    "name": "Gadget B",
+    "upc": "UPC789012",
+    "description": "Compact gadget ideal for repairs"
+  },
+  {
+    "name": "Tool C",
+    "upc": "UPC345678",
+    "description": "Heavy-duty tool for industrial applications"
+  },
+  {
+    "name": "Device D",
+    "upc": "UPC901234",
+    "description": "Smart device with Bluetooth connectivity"
+  },
+  {
+    "name": "Spare E",
+    "upc": "UPC567890",
+    "description": "Replacement part compatible with multiple systems"
+  }
+]

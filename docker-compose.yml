@@ -1,0 +1,54 @@
+services:
+  mysql:
+    image: mysql:8
+    container_name: invoice_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: invoice_db
+      MYSQL_USER: invoice_user
+      MYSQL_PASSWORD: invoice_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - /home/philip/docker_volumes/mostedge/mysql_data:/var/lib/mysql
+
+  mongodb:
+    image: mongo:5
+    container_name: invoice_mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - /home/philip/docker_volumes/mostedge/mongo_data:/data/db
+
+  fastapi:
+    build: 
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: invoice_fastapi
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+      - mongodb
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: invoice_user
+      MYSQL_PASSWORD: invoice_pass
+      MYSQL_DATABASE: invoice_db
+      MYSQL_DB: invoice_db
+      MONGO_URI: mongodb://mongodb:27017/
+      MONGO_DB: invoice_logs
+
+  streamlit:
+    build: ./frontend
+    container_name: invoice_streamlit
+    ports:
+      - "8501:8501"
+    depends_on:
+      - fastapi
+
+volumes:
+  mysql_data:
+  mongo_data:

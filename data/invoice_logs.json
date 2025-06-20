@@ -1,0 +1,21 @@
+{
+  "invoice_number": "INV001",
+  "vendor": "Acme Supplies Ltd.",
+  "items": [
+    {
+      "item": "Widget A",
+      "upc": "UPC123456",
+      "qty": 3,
+      "unit_price": 12.99,
+      "total": 38.97
+    }
+  ],
+  "extracted_totals": {
+    "subtotal": 100.00,
+    "tax": 7.00,
+    "total": 107.00
+  },
+  "raw_text_blocks": [...],
+  "errors": [],
+  "timestamp": "2025-06-19T12:00:00Z"
+}

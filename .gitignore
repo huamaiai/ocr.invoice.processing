@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+.pytest_cache/
+
+# Virtual environment
+venv/
+.env
+.venv
+*.env
+
+# Node modules
+frontend/node_modules/
+
+# Logs and databases
+*.log
+*.sqlite3
+data/faiss_index/*
+data/sample_invoices/*
+catalog_index.faiss
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python notebook checkpoints
+.ipynb_checkpoints
